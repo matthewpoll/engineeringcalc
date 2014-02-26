@@ -1,0 +1,46 @@
+<form action="" method="post" name="formsubmit" id="formsubmit"   >
+<h1> Process </h1>
+<p> operation type always robot </p>
+<br> <br>
+Number of welds: <input type="number" name="numberofwelds" id="numberofwelds"  >
+<br> <br>
+Number of construction welds: <input type="number" name="numberofconwelds" id="numberofconwelds"  >
+<br> <br>
+Total one: <input type="text" name="totalone" id="totalone" disabled>
+<div id="totalfail1"></div>
+<br> <br> 
+Total two: <input type="text" name="totaltwo" id="totaltwo" disabled>
+<div id="totalfail2"></div>
+<br> <br> <br> <br>
+Total three: <input type="text" name="totalthree" id="totalthree" disabled>
+<div id="totalfail3"></div>
+<br> <br> <br> <br>
+<input type="submit"  value="Calculate" id="submit" name="submit">
+<div id="result"> </div>
+</form> 
+
+<script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+   $('#formsubmit').validate({
+		rules:  {
+		
+		numberofwelds: "required",
+		numberofconwelds: "required"
+				},
+				
+		messages: {
+		numberofwelds: "Please enter the number of welds",
+		numberofconwelds: "Please enter number of con"
+		},
+		
+		submitHandler: function(form) {
+		form.submit();
+		}		
+		});
+		});
+</script>
